@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    margin:50px;
+}
+
+.Calculator{
+    padding: 1rem;
+    max-width: fit-content;
+    margin: 50px auto;
+    border: 1px solid;
+    border-color: rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 104, 204);
+    transform: perspective(55em) rotateX(50deg) rotateY(0deg) rotateZ(-40deg);
+    transform-style: preserve-3d;
+    border-radius: 32px;
+    box-shadow: -4px 4px 0 1px #f9f9fb,
+                1px 0 28px 0 rgba(34, 33, 81, 0.01),
+                -28px 28px 28px 0 rgba(34, 33, 81, 0.25);
+    transition: 0.2s ease-in-out transform, 0.2s ease-in-out box-shadow;
+
+}
+
+.Calculator:hover{
+    transform: perspective(75em) rotateX(0);
+    box-shadow: 0 0 0 0 #f9f9fb,
+                1px 0 28px 0 rgba(34, 33, 81, 0.01),
+                -1px 1px 12px 0 rgba(34, 33, 81, 0.25);
+}
+
+.result_container{
+    border: 1px solid gray;
+    outline: none;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background-color: rgb(23, 23, 23);
+    color: white;
+    max-width: 335px;
+    min-height: 3rem;
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: right;
+    padding: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.result_container::placeholder{
+    color: #fff;
+}
+
+.btns{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.btns button{
+    min-width: 5rem;
+    aspect-ratio: 1/0.75;
+    border-radius: 10px;
+    border: 1px solid rgb(199, 199, 239);
+    font-size: 1rem;
+    background: linear-gradient(145deg, #0002, #fff9);
+    cursor: pointer;
+}
+
+.btns button:hover{
+    background: #fff;
+    font-weight: bold;
+}
+
+.btns button:focus{
+    outline: #4646d6;
+    border-color: #4646d6;
+    font-weight: bold;
+}
+
+.btns .control{
+    background: linear-gradient(to right, #e73827, #f85032);
+    color: #fff;
+}
+
+.btns .control:hover{
+    background: linear-gradient(to right, #f85032, #e73827);
+}
+
+.control.delete{
+    font-size: 1.2rem;
+    cursor: auto;
+}
+
+.control.delete i{
+    opacity: .5;
+}
+
+.control.delete.active{
+    cursor: pointer;
+}
+
+.control.delete.active i{
+    opacity: 1;
+}
+
+.btns .operator{
+    font-size: 1.3rem;
+}
+
+.btns .negate, .btns .parcent, .btns .operator{
+    background: linear-gradient(145deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+    color: #fff;
+}
+
+.btns .negate:hover, .btns .parcent:hover, .btns .operator:hover{
+    background: linear-gradient(145deg, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+}
+
+.btns .equals{
+    background: linear-gradient(145deg, #0F2027, #203A43, #2C5364);
+    color: #fff;
+}
+
+.btns .equals:hover{
+    background: linear-gradient(145deg, #2C5364, #203A43, #0F2027);
+}
